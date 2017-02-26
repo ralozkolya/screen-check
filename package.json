@@ -1,8 +1,12 @@
 {
-  "name": "color-check",
-  "version": "0.0.0",
+  "name": "screen-check",
+  "version": "1.0.0",
   "license": "MIT",
-  "angular-cli": {},
+  "repository": "https://github.com/ralozkolya/screen-check",
+  "author": {
+    "name": "Nikoloz Razmadze",
+    "email": "raloz1@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +14,6 @@
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor"
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^2.3.1",
     "@angular/compiler": "^2.3.1",
