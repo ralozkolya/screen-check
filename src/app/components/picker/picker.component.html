@@ -16,7 +16,7 @@
     <br>
     <h4>Main colors:</h4>
     <div class="row">
-      <div *ngFor="let color of mainColors" class="col-xs-4 col-sm-2 text-center">
+      <div *ngFor="let color of mainColors" class="col-xs-2 text-center">
         <button class="color-button" [style.backgroundColor]="color" (click)="changeColor(color)"></button>
       </div>
     </div>

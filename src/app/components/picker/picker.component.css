@@ -77,3 +77,9 @@ label {
     transform: translateX(-120%);
   }
 }
+
+@media (max-width: 767px) {
+  .col-xs-2 {
+    padding: 2px;
+  }
+}
