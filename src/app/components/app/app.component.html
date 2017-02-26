@@ -1,0 +1,11 @@
+<div #container>
+  <app-background
+    (click)="shifted = !shifted"
+    [color]="color"></app-background>
+  <app-picker
+    (colorChange)="color = $event"
+    (fullscreen)="toggleFullScreen()"
+    (hide)="shifted = true"
+    [currentColor]="color"
+    [shifted]="shifted"></app-picker>
+</div>

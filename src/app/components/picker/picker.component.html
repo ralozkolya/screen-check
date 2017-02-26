@@ -1,0 +1,52 @@
+<div class="picker" [class.shifted]="shifted">
+  <div class="container-fluid">
+    <div>
+      <button class="btn btn-default" title="Hide"
+              (click)="hide.emit(true)">
+        <span class="fa fa-chevron-left hidden-xs"></span>
+        <span class="fa fa-chevron-up visible-xs"></span>
+      </button>
+      <button class="btn btn-default" title="Toggle fullscreen"
+              (click)="toggleFullScreen()"
+              [class.disabled]="!fullscreenService.isFullScreenAvailable()">
+        <span class="fa fa-arrows-alt" *ngIf="!fullscreenService.isFullScreen()"></span>
+        <span class="glyphicon glyphicon-resize-small" *ngIf="fullscreenService.isFullScreen()"></span>
+      </button>
+    </div>
+    <br>
+    <h4>Main colors:</h4>
+    <div class="row">
+      <div *ngFor="let color of mainColors" class="col-xs-4 col-sm-2 text-center">
+        <button class="color-button" [style.backgroundColor]="color" (click)="changeColor(color)"></button>
+      </div>
+    </div>
+    <div>
+      <input type="checkbox" id="loop" (change)="loop($event.target.checked)" [checked]="loopTimer">
+      <label for="loop">Loop over main colors with</label>
+      <input class="form-control inline-text" id="seconds"
+        (input)="loop(true)"
+        [(ngModel)]="loopInterval">
+      <label for="seconds">seconds interval</label>
+    </div>
+    <br>
+    <h4>Custom color:</h4>
+    <input type="text" class="form-control" value="{{currentColor}}" (input)="changeColor($event.target.value)">
+    <div class="tiny">Enter any valid CSS color value</div>
+    <br>
+    <div class="row channel">
+      <div class="col-xs-3 small">Red</div>
+      <div class="col-xs-6"><input type="range" min="0" max="255" [(ngModel)]="redChannel" [value]="redChannel" (input)="changeChannels()"></div>
+      <div class="col-xs-3"><input type="text" class="form-control" [(ngModel)]="redChannel"></div>
+    </div>
+    <div class="row channel">
+      <div class="col-xs-3 small">Green</div>
+      <div class="col-xs-6"><input type="range" min="0" max="255" [(ngModel)]="greenChannel" [value]="greenChannel" (input)="changeChannels()"></div>
+      <div class="col-xs-3"><input type="text" class="form-control" [(ngModel)]="greenChannel"></div>
+    </div>
+    <div class="row channel">
+      <div class="col-xs-3 small">Blue</div>
+      <div class="col-xs-6"><input type="range" min="0" max="255" [(ngModel)]="blueChannel" [value]="blueChannel" (input)="changeChannels()"></div>
+      <div class="col-xs-3"><input type="text" class="form-control" [(ngModel)]="blueChannel"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+label {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.picker {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: black;
+  font-size: 20px;
+  border: solid 1px #aaa;
+  background: rgba(255, 255, 255, .7);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+  -webkit-transition: transform .5s;
+  -moz-transition: transform .5s;
+  -ms-transition: transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+}
+
+.shifted {
+  -webkit-transform: translateY(-120%);
+  -moz-transform: translateY(-120%);
+  -ms-transform: translateY(-120%);
+  -o-transform: translateY(-120%);
+  transform: translateY(-120%);
+}
+
+.color-button {
+  border: solid 1px #ccc;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.fa-chevron-up {
+  line-height: 20px;
+}
+
+.channel input[type=text] {
+  position: relative;
+  margin-bottom: 5px;
+  top: -7px;
+}
+
+.inline-text {
+  display: inline;
+  width: 50px;
+  text-align: right;
+}
+
+
+@media (min-width: 768px) {
+
+  .picker {
+    width: auto;
+    top: 30px;
+    left: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .shifted {
+    -webkit-transform: translateX(-120%);
+    -moz-transform: translateX(-120%);
+    -ms-transform: translateX(-120%);
+    -o-transform: translateX(-120%);
+    transform: translateX(-120%);
+  }
+}
