@@ -1,4 +1,4 @@
-import {Injectable, ElementRef} from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 
 @Injectable()
 export class FullscreenService {
@@ -15,7 +15,7 @@ export class FullscreenService {
     let el: HTMLElement | Document;
     let func: Function;
 
-    if(this.isFullScreen()) {
+    if (this.isFullScreen()) {
 
       el = document;
 
@@ -23,17 +23,19 @@ export class FullscreenService {
         || document.webkitExitFullscreen
         || (<any>document).mozCancelFullScreen
         || (<any>document).msExitFullscreen;
-    }
+    } else {
 
-    else {
       el = element.nativeElement;
+
       func = (<any>el).requestFullScreen
         || (<any>el).webkitRequestFullscreen
         || (<any>el).mozRequestFullScreen
         || (<any>el).msRequestFullscreen;
     }
 
-    if(func) func.call(el);
+    if (func) {
+      func.call(el);
+    }
   }
 
   public isFullScreen(): boolean {

@@ -1,9 +1,7 @@
-import {Component, Output, EventEmitter, Input, OnInit, ElementRef} from '@angular/core';
-import {FullscreenService} from "../../services/fullscreen.service";
-import Timer = NodeJS.Timer;
-import {MAIN_COLORS} from "../../enums";
-import {BackgroundComponent} from "../background/background.component";
-import {ColorService} from "../../services/color.service";
+import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
+import { FullscreenService } from '../../services/fullscreen.service';
+import { MAIN_COLORS } from '../../enums';
+import { ColorService } from '../../services/color.service';
 
 @Component({
   selector: 'app-picker',
@@ -31,7 +29,7 @@ export class PickerComponent implements OnInit {
   private mainColors: string[] = MAIN_COLORS;
 
   private loopTimer: number;
-  private loopInterval: number = 5;
+  private loopInterval = 5;
 
   private redChannel: number;
   private greenChannel: number;
@@ -62,16 +60,20 @@ export class PickerComponent implements OnInit {
 
     this.cancelLoop();
 
-    if(checked) {
+    if (checked) {
       let index: number = Math.max(MAIN_COLORS.indexOf(this.currentColor), 0);
       let actualInterval: number;
-      let callback: Function = () => {
+      const callback: Function = () => {
         this.assignColor(MAIN_COLORS[index++]);
-        if(index >= MAIN_COLORS.length) index = 0;
+        if (index >= MAIN_COLORS.length) {
+          index = 0;
+        }
       };
 
       actualInterval = Math.max(this.loopInterval, .5);
-      if(isNaN(actualInterval)) actualInterval = 5;
+      if (isNaN(actualInterval)) {
+        actualInterval = 5;
+      }
 
       this.loopTimer = setInterval(callback, actualInterval * 1000);
 
@@ -89,10 +91,10 @@ export class PickerComponent implements OnInit {
   }
 
   private assignChannels(color: string): void {
-    let hex: string = this.colorService.colorToHex(color).slice(-6);
-    this.redChannel = parseInt('0x' + hex.slice(0, 2));
-    this.greenChannel = parseInt('0x' + hex.slice(2, 4));
-    this.blueChannel = parseInt('0x' + hex.slice(4, 6));
+    const hex: string = this.colorService.colorToHex(color).slice(-6);
+    this.redChannel = parseInt('0x' + hex.slice(0, 2), 10);
+    this.greenChannel = parseInt('0x' + hex.slice(2, 4), 10);
+    this.blueChannel = parseInt('0x' + hex.slice(4, 6), 10);
   }
 
 }

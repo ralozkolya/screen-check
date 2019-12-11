@@ -23,7 +23,7 @@ export class ColorService {
   }
 
   private byteToHex(number: number): string {
-    return ('0'+number.toString(16)).slice(-2);
+    return ('0' + number.toString(16)).slice(-2);
   }
 
   private colorToRBGA(color: string): Uint8ClampedArray {
