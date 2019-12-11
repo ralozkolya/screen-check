@@ -92,9 +92,9 @@ export class PickerComponent implements OnInit {
 
   private assignChannels(color: string): void {
     const hex: string = this.colorService.colorToHex(color).slice(-6);
-    this.redChannel = parseInt('0x' + hex.slice(0, 2), 10);
-    this.greenChannel = parseInt('0x' + hex.slice(2, 4), 10);
-    this.blueChannel = parseInt('0x' + hex.slice(4, 6), 10);
+    this.redChannel = parseInt(hex.slice(0, 2), 16);
+    this.greenChannel = parseInt(hex.slice(2, 4), 16);
+    this.blueChannel = parseInt(hex.slice(4, 6), 16);
   }
 
 }
