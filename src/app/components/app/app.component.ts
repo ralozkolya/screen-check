@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { FullscreenService } from '../../services/fullscreen.service';
 import { MAIN_COLORS } from '../../enums';
 
@@ -16,11 +16,13 @@ export class AppComponent  {
 
   private shifted = false;
 
-  constructor(private fullscreenService: FullscreenService) {}
+  constructor(private fullscreenService: FullscreenService, private changeDetection: ChangeDetectorRef) {}
 
   private toggleFullScreen(): void {
     if (this.fullscreenService.isFullScreenAvailable()) {
       this.fullscreenService.toggleFullScreen(this.container);
+      // Workaround for inconsistent requestFullScreen API
+      setTimeout(() => this.changeDetection.markForCheck(), 50);
     }
   }
 }
