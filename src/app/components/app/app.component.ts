@@ -9,7 +9,7 @@ import { MAIN_COLORS } from '../../enums';
 })
 export class AppComponent  {
 
-  @ViewChild('container')
+  @ViewChild('container', { static: false })
   private container: ElementRef;
 
   private color: string = MAIN_COLORS[0];
