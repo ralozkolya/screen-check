@@ -21,42 +21,42 @@ export class PickerComponent implements OnInit {
   public hide: EventEmitter<boolean> = new EventEmitter();
 
   @Input()
-  private currentColor: string;
+  currentColor: string;
 
   @Input()
-  private shifted: boolean;
+  shifted: boolean;
 
-  private mainColors: string[] = MAIN_COLORS;
+  mainColors: string[] = MAIN_COLORS;
 
-  private loopTimer: number;
-  private loopInterval = 5;
+  loopTimer: number;
+  loopInterval = 5;
 
-  private redChannel: number;
-  private greenChannel: number;
-  private blueChannel: number;
+  redChannel: number;
+  greenChannel: number;
+  blueChannel: number;
 
-  constructor(private fullscreenService: FullscreenService, private colorService: ColorService) {}
+  constructor(public fullscreenService: FullscreenService, public colorService: ColorService) {}
 
   public ngOnInit(): void {
     this.loop(true);
   }
 
-  private changeColor(color: string): void {
+  changeColor(color: string): void {
     this.cancelLoop();
     this.assignColor(color);
   }
 
-  private changeChannels(): void {
+  changeChannels(): void {
     this.cancelLoop();
     this.assignColor(this.colorService.colorFromChannels(this.redChannel, this.greenChannel, this.blueChannel));
   }
 
-  private assignColor(color: string): void {
+  assignColor(color: string): void {
     this.assignChannels(color);
     this.colorChange.emit(color);
   }
 
-  private loop(checked: boolean): void {
+  loop(checked: boolean): void {
 
     this.cancelLoop();
 
@@ -81,16 +81,16 @@ export class PickerComponent implements OnInit {
     }
   }
 
-  private cancelLoop(): void {
+  cancelLoop(): void {
     clearInterval(this.loopTimer);
     this.loopTimer = 0;
   }
 
-  private toggleFullScreen(): void {
+  toggleFullScreen(): void {
     this.fullscreen.emit(true);
   }
 
-  private assignChannels(color: string): void {
+  assignChannels(color: string): void {
     const hex: string = this.colorService.colorToHex(color).slice(-6);
     this.redChannel = parseInt(hex.slice(0, 2), 16);
     this.greenChannel = parseInt(hex.slice(2, 4), 16);

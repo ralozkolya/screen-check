@@ -7,6 +7,8 @@ import { PickerComponent } from './components/picker/picker.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { FullscreenService } from './services/fullscreen.service';
 import { ColorService } from './services/color.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { ColorService } from './services/color.service';
   imports: [
     BrowserModule,
     FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     FullscreenService,

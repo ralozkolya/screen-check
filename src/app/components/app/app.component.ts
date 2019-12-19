@@ -10,15 +10,15 @@ import { MAIN_COLORS } from '../../enums';
 export class AppComponent  {
 
   @ViewChild('container', { static: false })
-  private container: ElementRef;
+  container: ElementRef;
 
-  private color: string = MAIN_COLORS[0];
+  color: string = MAIN_COLORS[0];
 
-  private shifted = false;
+  shifted = false;
 
-  constructor(private fullscreenService: FullscreenService, private changeDetection: ChangeDetectorRef) {}
+  constructor(public fullscreenService: FullscreenService, public changeDetection: ChangeDetectorRef) {}
 
-  private toggleFullScreen(): void {
+  toggleFullScreen(): void {
     if (this.fullscreenService.isFullScreenAvailable()) {
       this.fullscreenService.toggleFullScreen(this.container);
       // Workaround for inconsistent requestFullScreen API
