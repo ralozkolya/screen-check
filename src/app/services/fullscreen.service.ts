@@ -5,7 +5,7 @@ export class FullscreenService {
 
   public isFullScreenAvailable(): boolean {
     return document.fullscreenEnabled
-      || document.webkitFullscreenEnabled
+      || (<any>document).webkitFullscreenEnabled
       || (<any>document).mozFullScreenEnabled
       || (<any>document).msFullscreenEnabled;
   }
@@ -20,7 +20,7 @@ export class FullscreenService {
       el = document;
 
       func = document.exitFullscreen
-        || document.webkitExitFullscreen
+        || (<any>document).webkitExitFullscreen
         || (<any>document).mozCancelFullScreen
         || (<any>document).msExitFullscreen;
     } else {
@@ -40,7 +40,7 @@ export class FullscreenService {
 
   public isFullScreen(): boolean {
     return document.fullscreenElement
-      || document.webkitFullscreenElement
+      || (<any>document).webkitFullscreenElement
       || (<any>document).mozFullScreenElement
       || (<any>document).msFullscreenElement;
   }
