@@ -21,6 +21,7 @@
       </div>
     </div>
     <div>
+      <!--suppress TypeScriptUnresolvedVariable -->
       <input type="checkbox" id="loop" (change)="loop($event.target.checked)" [checked]="loopTimer">
       <label for="loop">Loop over main colors with</label>
       <input class="form-control inline-text" id="seconds"
@@ -30,6 +31,7 @@
     </div>
     <br>
     <h4>Custom color:</h4>
+    <!--suppress TypeScriptUnresolvedVariable -->
     <input type="text" class="form-control" value="{{currentColor}}" (input)="changeColor($event.target.value)">
     <div class="tiny">Enter any valid CSS color value</div>
     <br>

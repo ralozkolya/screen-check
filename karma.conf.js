@@ -9,10 +9,10 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-remap-istanbul'),
-      require('angular-cli/plugins/karma')
+      require('@angular/cli/plugins/karma')
     ],
     files: [
-      
+
     ],
     preprocessors: {
       './src/test.ts': ['angular-cli']
@@ -26,7 +26,7 @@ module.exports = function (config) {
         lcovonly: './coverage/coverage.lcov'
       }
     },
-    
+
     reporters: config.angularCli && config.angularCli.codeCoverage
               ? ['progress', 'karma-remap-istanbul']
               : ['progress'],

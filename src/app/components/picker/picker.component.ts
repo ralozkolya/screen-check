@@ -35,7 +35,7 @@ export class PickerComponent implements OnInit {
   greenChannel: number;
   blueChannel: number;
 
-  constructor(public fullscreenService: FullscreenService, public colorService: ColorService) {}
+  constructor(public fullscreenService: FullscreenService) {}
 
   public ngOnInit(): void {
     this.loop(true);
@@ -48,7 +48,7 @@ export class PickerComponent implements OnInit {
 
   changeChannels(): void {
     this.cancelLoop();
-    this.assignColor(this.colorService.colorFromChannels(this.redChannel, this.greenChannel, this.blueChannel));
+    this.assignColor(ColorService.colorFromChannels(this.redChannel, this.greenChannel, this.blueChannel));
   }
 
   assignColor(color: string): void {
@@ -91,7 +91,7 @@ export class PickerComponent implements OnInit {
   }
 
   assignChannels(color: string): void {
-    const hex: string = this.colorService.colorToHex(color).slice(-6);
+    const hex: string = ColorService.colorToHex(color).slice(-6);
     this.redChannel = parseInt(hex.slice(0, 2), 16);
     this.greenChannel = parseInt(hex.slice(2, 4), 16);
     this.blueChannel = parseInt(hex.slice(4, 6), 16);
