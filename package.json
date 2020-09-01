@@ -1,55 +1,55 @@
 {
-  "name": "screen-check",
-  "version": "1.0.0",
-  "license": "MIT",
-  "repository": "https://github.com/ralozkolya/screen-check",
-  "author": {
-    "name": "Nikoloz Razmadze",
-    "email": "raloz1@gmail.com"
-  },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "test": "ng test",
-    "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
-  },
-  "dependencies": {
-    "@angular/animations": "^8.2.14",
-    "@angular/cli": "^8.3.26",
-    "@angular/common": "^8.2.14",
-    "@angular/compiler": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/platform-server": "^8.2.14",
-    "@angular/pwa": "^0.803.26",
-    "@angular/router": "^8.2.14",
-    "@angular/service-worker": "^8.2.14",
-    "core-js": "^2.4.1",
-    "font-awesome": "^4.7.0",
-    "rxjs": "^6.5.5",
-    "ts-helpers": "^1.1.1",
-    "tslib": "^1.13.0",
-    "zone.js": "~0.9.1"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^0.901.7",
-    "@angular/compiler-cli": "^8.2.14",
-    "@types/jasmine": "2.5.38",
-    "@types/node": "^6.14.10",
-    "codelyzer": "^5.2.2",
-    "jasmine-core": "2.5.2",
-    "jasmine-spec-reporter": "2.5.0",
-    "karma": "1.2.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-cli": "^1.0.1",
-    "karma-jasmine": "^1.0.2",
-    "karma-remap-istanbul": "^0.2.1",
-    "protractor": "~4.0.13",
-    "ts-node": "1.2.1",
-    "tslint": "^4.3.0",
-    "typescript": "^3.9.5"
-  }
+    "name": "screen-check",
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "https://github.com/ralozkolya/screen-check",
+    "author": {
+        "name": "Nikoloz Razmadze",
+        "email": "raloz1@gmail.com"
+    },
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "test": "ng test",
+        "pree2e": "webdriver-manager update --standalone false --gecko false",
+        "e2e": "protractor"
+    },
+    "dependencies": {
+        "@angular/animations": "^8.2.14",
+        "@angular/cli": "^8.3.26",
+        "@angular/common": "^8.2.14",
+        "@angular/compiler": "^8.2.14",
+        "@angular/core": "^8.2.14",
+        "@angular/forms": "^8.2.14",
+        "@angular/platform-browser": "^8.2.14",
+        "@angular/platform-browser-dynamic": "^8.2.14",
+        "@angular/platform-server": "^8.2.14",
+        "@angular/pwa": "^0.803.26",
+        "@angular/router": "^8.2.14",
+        "@angular/service-worker": "^8.2.14",
+        "core-js": "^2.4.1",
+        "font-awesome": "^4.7.0",
+        "rxjs": "^6.5.5",
+        "ts-helpers": "^1.1.1",
+        "tslib": "^1.13.0",
+        "zone.js": "~0.9.1"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "0.803.24",
+        "@angular/compiler-cli": "^8.2.14",
+        "@types/jasmine": "2.5.38",
+        "@types/node": "^6.14.10",
+        "codelyzer": "^5.2.2",
+        "jasmine-core": "2.5.2",
+        "jasmine-spec-reporter": "2.5.0",
+        "karma": "1.2.0",
+        "karma-chrome-launcher": "^2.0.0",
+        "karma-cli": "^1.0.1",
+        "karma-jasmine": "^1.0.2",
+        "karma-remap-istanbul": "^0.2.1",
+        "protractor": "~4.0.13",
+        "ts-node": "1.2.1",
+        "tslint": "^4.3.0",
+        "typescript": "3.5.3"
+    }
 }
